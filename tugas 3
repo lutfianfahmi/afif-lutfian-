@@ -1,0 +1,76 @@
+import java.io.*;
+
+class tugaspertemuan3
+{
+	public static void main (String args[]) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+			try {
+			
+			String nama_depan;
+			String nama_belakang;
+			double usia;
+			double tinggi_bdn;
+			double hrg_karcis = 25000;
+			double dsk_usia;
+			double total;
+			
+			System.out.println();
+			System.out.println("===========================");
+			System.out.println(" Transaksi Penjualan Karcis");
+			System.out.println("      Wahana Bermain       ");
+			System.out.println("     \"Ciputri World\"     ");
+			System.out.println("    Jl Ancol 26 Jakarta    ");
+			System.out.println("===========================");
+			System.out.println();
+			
+			System.out.print("Inputkan nama depan : "); nama_depan=br.readLine();
+			System.out.print("Inputkan nama belakang : "); nama_belakang=br.readLine();
+			System.out.print("Inputkan usia pembeli (tahun) : "); usia=Double.parseDouble (br.readLine());
+			System.out.print("Inputkan tinggi badan (cm) : "); tinggi_bdn=Double.parseDouble (br.readLine());
+			
+			System.out.println();
+			System.out.println();
+			System.out.println("===========================");
+			System.out.println(" Transaksi Penjualan Karcis");
+			System.out.println("      Wahana Bermain       ");
+			System.out.println("     \"Ciputri World\"     ");
+			System.out.println("    Jl Ancol 26 Jakarta    ");
+			System.out.println("===========================");
+			System.out.println();
+			
+			
+			if (usia<10) {
+					dsk_usia = hrg_karcis*0.1; 
+				} else {
+					dsk_usia = 0; }
+					
+			total = hrg_karcis-dsk_usia;
+			
+			
+			if (tinggi_bdn>=130) {
+				System.out.println("Nama pembeli : " +nama_depan+ " " +nama_belakang);
+				System.out.println("Harga karcis sebelum diskon : " +hrg_karcis);
+				System.out.println("Diskon usia (10%) : " +dsk_usia);
+				System.out.println("Total bayar : " +total);
+			} else {
+					System.out.println("MAAF TIDAK BISA BERMAIN"); 
+				}
+
+
+
+
+			
+			
+			
+			}
+			
+			catch (Exception e)	
+				{
+				System.out.println(e);
+				}
+		
+		
+		}		
+}
