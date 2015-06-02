@@ -1,0 +1,74 @@
+import java.io.*;
+
+class pertemuan4
+{
+	public static void main (String args[]) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			try {
+			
+			int pilihan = 0;
+			double bil1 = 0;
+			double bil2 = 0;
+			
+			
+			do {
+				System.out.println();
+				System.out.println("============================");
+				System.out.println("  \"Kalkulator Sederhana\"  ");
+				System.out.println("============================");
+				System.out.println("1. Inputkan 2 bilangan");
+				System.out.println("2. Hasil penjumlahan & pengurangan");
+				System.out.println("3. Hasil pembagian & perkalian");
+				System.out.println("4. Keluar");
+				System.out.print("Masukkan pilihan [1-4] : "); 
+				pilihan=Integer.parseInt(br.readLine());
+				
+				switch (pilihan) {
+					case 1 :
+						System.out.println();
+						System.out.println("=============================");
+						System.out.println("   \"Inputkan 2 Bilangan\"   ");
+						System.out.println("=============================");
+						System.out.print("Masukkan bilangan 1 : "); bil1=Double.parseDouble(br.readLine());
+						System.out.print("Masukkan bilangan 2 : "); bil2=Double.parseDouble(br.readLine());
+						break;
+					case 2 : 
+						System.out.println();
+						System.out.println("===================================");
+						System.out.println("\"Hasil Penjumlahan & Pengurangan\"");
+						System.out.println("===================================");
+						double jumlah = bil1+bil2;
+						double kurang = bil1-bil2;
+						System.out.println("Hasil penjumlahan : "+jumlah);
+						System.out.println("Hasil penngurangan : "+kurang);
+						break;
+					case 3 : 
+						System.out.println();
+						System.out.println("===============================");
+						System.out.println("\"Hasil Pembagian & Perkalian\"");
+						System.out.println("===============================");
+						double bagi = bil1/bil2;
+						double kali = bil1*bil2;
+						System.out.println("Hasil pembagian : " +bagi);
+						System.out.println("Hasil perkalian : " +kali);
+						break;
+					case 4 :
+						System.exit(0);
+						break;						
+				}
+			
+			}
+			while (pilihan<5);
+			
+			
+			
+			}	
+			catch (Exception e)	
+				{
+				System.out.println(e);
+				}
+		
+		
+		}		
+}
