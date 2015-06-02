@@ -1,0 +1,57 @@
+import java.io.*;
+
+class tugaspertemuan1
+{
+	public static void main (String args[]) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+			try {
+			
+			String nama_depan;
+			String nama_belakang;
+			String alamat;
+			String kota_lahir;
+			int usia;
+			int biaya;
+			
+			System.out.println();
+			System.out.println("======================================");
+			System.out.println("Input Biodata Anggota Kursus Mengemudi");
+			System.out.println("          \"Maju Selangkah\"          ");
+			System.out.println("         Jl Jemursari 28 Surabaya"     );
+			System.out.println("======================================");
+			System.out.println();
+			
+			System.out.print("Inputkan nama depan : "); nama_depan=br.readLine();
+			System.out.print("Inputkan nama belakang : "); nama_belakang=br.readLine();
+			System.out.print("Inputkan alamat : "); alamat=br.readLine();
+			System.out.print("Inputkan kota lahir : "); kota_lahir=br.readLine();
+			System.out.print("Inputkan usia : "); usia=Integer.parseInt (br.readLine());
+			System.out.print("Inputkan biaya pendaftaran : "); biaya=Integer.parseInt (br.readLine());
+			
+			System.out.println();
+			System.out.println();
+			System.out.println("======================================");
+			System.out.println("Input Biodata Anggota Kursus Mengemudi");
+			System.out.println("          \"Maju Selangkah\"          ");
+			System.out.println("         Jl Jemursari 28 Surabaya"     );
+			System.out.println("======================================");
+			System.out.println();
+			
+			System.out.println("Nama depan : " +nama_depan+" "+nama_belakang);
+			System.out.println("Email : " +nama_depan+ "@majuselangkah.com");
+			System.out.println("Alamat : " +alamat);
+			System.out.println("Kota lahir : " +kota_lahir);
+			System.out.println("Usia : " +usia+ " tahun");
+			System.out.println("Biaya pendaftaran : Rp" +biaya);
+			
+			}
+			
+			catch (Exception e)	
+			{
+			System.out.println(e);
+			}
+		
+		}		
+}
