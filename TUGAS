@@ -1,0 +1,39 @@
+import java.io.*;
+
+class tugaspertemuan7
+{
+	public static void main (String args[]) throws IOException
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+			String mhs [][] = { {"090088","80","80","90"},
+								{"124500","80","90","70"},
+								{"120456","60","70","40"}
+							  };
+							  
+			System.out.println("NIM : ");
+			String nim = br.readline();
+			for (int i=0; i<3; i++) {
+				double na = NilaiAkhir(Double.parseDouble(mhs[i][1]), Double.parseDouble(mhs[i][2]), Double.parseDouble(mhs[i][3]));
+				cetak (nim,na);
+			}
+		}
+		
+		private static double NilaiAkhir (double tugas, double uts, double uas) 
+		{
+			double na = 0.3*tugas + 0.3*uts + 0.4*uas;
+			return na;
+		}
+		
+		private static void CetakHasil (String nim, double na) 
+		{
+				System.out.println("=====================");
+				System.out.println("NIM : " + nim);
+				System.out.println("Nilai akhir : " + na); 
+				System.out.println("=====================");
+			}
+		}
+		
+
+		
+}
