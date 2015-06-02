@@ -1,0 +1,93 @@
+import java.io.*;
+
+class pertemuan6
+{
+	public static void main (String args[]) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			try {
+			
+			String mhs [][] = new String [3][4];
+			double na = 0;
+			double tugas = 0;
+			double uts = 0;
+			double uas = 0;
+			
+			int jumlah = 0;
+			int pilihan = 0;
+			
+			
+			
+			do {
+				System.out.println();
+				System.out.println("===================================");
+				System.out.println("  \"PROGRAM PENILAIAN MAHASISWA\"  ");
+				System.out.println("===================================");
+				System.out.println("1. Inputkan data nilai mahasiswa");
+				System.out.println("2. Data nilai akhir & nilai huruf mahasiswa");
+				System.out.println("3. Keluar");
+				System.out.print("Masukkan pilihan [1-3] : "); 
+				pilihan=Integer.parseInt(br.readLine());
+				switch (pilihan) {
+					case 1 :
+						System.out.println();
+						System.out.println("-----------------------------------");
+						System.out.println("  \"PROGRAM PENILAIAN MAHASISWA\"  ");
+						System.out.println("-----------------------------------");
+						System.out.print("Inputkan jumlah mahasiswa : "); jumlah=Integer.parseInt (br.readLine());
+						for (int i=0; i<jumlah; i++) {
+							System.out.print("Inputkan nama : "); mhs[i][0] = br.readLine();
+							System.out.print("Inputkan matkul : "); mhs[i][1] = br.readLine();
+							System.out.print("Inputkan tugas : "); tugas=Double.parseDouble (br.readLine());
+							System.out.print("Inputkan uts : "); uts=Double.parseDouble (br.readLine());
+							System.out.print("Inputkan uas : "); uas=Double.parseDouble (br.readLine());
+							na = 0.3*uts + 0.3*uas + 0.4*tugas;
+							mhs[i][2] = na+""; //String.parseString(namavariabel) --> konversi tipe data double ke string
+							if (na>=0 && na<=44) {
+								mhs[i][3] = "E";
+							}  else if (na>=45 && na<=54) {
+								mhs[i][3] = "D";
+							}  else if (na>=55 && na<=59) {
+								mhs[i][3] = "C";
+							}  else if (na>=60 && na<=64) {
+								mhs[i][3] = "C+";
+							}  else if (na>=65 && na<=74) {
+								mhs[i][3] = "B";
+							}  else if (na>=75 && na<=79) {
+								mhs[i][3] = "B+";
+							}  else if (na>=80 && na<=100) {
+								mhs[i][3] = "A";
+							}
+						}
+						break;
+					case 2 : 
+						System.out.println();
+						System.out.println("-----------------------------------");
+						System.out.println("  \"PROGRAM PENILAIAN MAHASISWA\"  ");
+						System.out.println("-----------------------------------");
+						for (int j=0; j<3; j++) {
+							System.out.println("Nama : " +mhs[j][0]); 
+							System.out.println("Matkul : " +mhs[j][1]); 
+							System.out.println("Nilai akhir : " +mhs[j][2]); 
+							System.out.println("Nilai huruf : " +mhs[j][3]); 
+						}
+						break;
+					case 3 : 
+						System.exit(0);
+						break;					
+				}
+			
+			}
+			while (pilihan<3);
+			
+			
+			
+			}	
+			catch (Exception e)	
+				{
+				System.out.println(e);
+				}
+		
+		
+		}		
+}
