@@ -1,0 +1,43 @@
+import java.io.*;
+
+class kalkulator
+{
+	public static void main (String args[]) throws Exception
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+			double a=0;
+			double b=0;
+			
+			System.out.println();
+			System.out.println("========================");
+			System.out.println("\"Kalkulator Sederhana\"");
+			System.out.println("========================");
+			System.out.println();
+			
+			System.out.print("Inputkan bilangan 1 : "); 
+			a=Double.parseDouble(br.readLine());
+			System.out.print("Inputkan bilangan 2 : "); 
+			b=Double.parseDouble(br.readLine());
+			
+			System.out.println();
+			System.out.println("========================");
+			System.out.println("\"Kalkulator Sederhana\"");
+			System.out.println("========================");
+			System.out.println();
+			
+			double penjumlahan=a+b;
+			double pengurangan=a-b;
+			double perkalian=a*b;
+			double pembagian=a/b;
+			
+			System.out.println("Hasil penjumlahan : " +penjumlahan); 
+			System.out.println("Hasil penjumlahan : " +pengurangan); 
+			System.out.println("Hasil penjumlahan : " +perkalian); 
+			System.out.println("Hasil penjumlahan : " +pembagian); 
+			
+			
+			
+		
+		}		
+}
