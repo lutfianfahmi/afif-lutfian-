@@ -1,0 +1,104 @@
+import java.io.*;
+
+class tugaspertemuan6
+{
+	public static void main (String args[]) 
+		{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			try {
+			
+
+			int harga [] = new int [3];
+			int totalawal [] = new int [3];
+			double diskon [] = new double [3];
+			double totalbayar [] = new double [3];
+			int jumlah [] = new int [3];
+			int pilihan = 0;
+			
+			String bk [][] = {  {"B001","Visual Basic"},
+								{"B002","Java Programming"},
+								{"B003","PHP programming"}
+							 };
+							 
+
+			
+			
+			do {
+				System.out.println();
+				System.out.println("==============================");
+				System.out.println("  \"PROGRAM PEMBELIAN BUKU\"  ");
+				System.out.println("==============================");
+				System.out.println("1. Tampilkan data buku");
+				System.out.println("2. Buku yg ingin dibeli");
+				System.out.println("3. Tampilkan Nota");
+				System.out.println("4. Keluar");
+				System.out.print("Masukkan pilihan [1-4] : "); 
+				pilihan=Integer.parseInt(br.readLine());
+				switch (pilihan) {
+					case 1 :
+						System.out.println();
+						System.out.println("-------------------");
+						System.out.println("  \"DAFTAR BUKU\"  ");
+						System.out.println("-------------------");
+						for (int i=0; i<3; i++) {
+							System.out.println("Kode buku : "+bk[i][0]); 
+							System.out.println("Judul buku : "+bk[i][1]); 
+							System.out.println();
+						}
+						break;
+					case 2 : 
+						System.out.println();
+						System.out.println("------------------");
+						System.out.println("  \"PILIH BUKU\"  ");
+						System.out.println("------------------");
+						for (int j=0; j<1; j++) {
+							System.out.print("Kode buku : "); bk[j][j]=br.readLine();
+							System.out.print("Jumlah buku : " ); jumlah[j]=Integer.parseInt (br.readLine());
+							System.out.println();
+							if (bk[j][j].equalsIgnoreCase("B001")) {
+								harga[j] = 55000;
+							}  else if (bk[j][j].equalsIgnoreCase("B002")) {
+								harga[j] = 65000;
+							}  else if (bk[j][j].equalsIgnoreCase("B003")) {
+								harga[j] = 80000;
+							}  
+							totalawal[j] = jumlah[j] * harga[j];
+							if (totalawal[j]>=500000) {
+								diskon[j] = 0.1 * totalawal[j];
+							} else {
+								diskon[j] = 0;
+							}
+							totalbayar[j] = totalawal[j] - diskon[j];
+						}
+						break;
+					case 3 :
+						System.out.println();
+						System.out.println("+++++++++++++++++++++++++++");
+						System.out.println("  \"NOTA PENJUALAN BUKU\"  ");
+						System.out.println("+++++++++++++++++++++++++++");
+						for (int k=0; k<1; k++) {
+							System.out.println("Kode buku : " +bk[k][k]);
+							System.out.println("Jumlah buku : " +jumlah[k]);
+							System.out.println("Total awal: " +totalawal[k]);
+							System.out.println("Total bayar: " +totalbayar[k]);
+						}
+						break;
+					case 4 : 
+						System.exit(0);
+						break;					
+				}
+			
+			}
+			while (pilihan<4);
+			
+			
+			
+			}	
+			catch (Exception e)	
+				{
+				System.out.println(e);
+				}
+		
+		
+		}		
+}
